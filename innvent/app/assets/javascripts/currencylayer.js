@@ -44,6 +44,13 @@ $(document).ready(function() {
         }
     }
 
+    function changeCurrencyTOBRL(brazilianConverted, anyConverted) {
+        
+        let conversion = anyConverted / brazilianConverted;
+        
+        return conversion;
+    }
+
 
     $("#first-slider-item").click(function() {
         createHistoricalArrays();
