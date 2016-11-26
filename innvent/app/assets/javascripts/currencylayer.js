@@ -7,19 +7,13 @@ $(document).ready(function() {
     function apiRequest(date) {
         // get the most recent exchange rates via the "live" endpoint:
         $.ajax({
-            url: 'http://apilayer.net/api/' + endpoint + '?access_key=' + access_key + '&date=',   
+            url: 'http://apilayer.net/api/' + endpoint + '?access_key=' + 
+            access_key + '&date=' + date + "&currencies=BRL,EUR,ARS",   
             dataType: 'jsonp',
             success: function(json) {
 
-                // exchange rata data is stored in json.quotes
-                alert(json.quotes.USDGBP);
-                
-                // source currency is stored in json.source
-                alert(json.source);
-                
-                // timestamp can be accessed in json.timestamp
-                alert(json.timestamp);
-                
+                alert(JSON.stringify(json.quotes));
+
             }
         });
     }
@@ -31,7 +25,10 @@ $(document).ready(function() {
 
 
     $("#first-slider-item").click(function() {
-        apiRequest();
+        let date = new Date();
+        let formatedDate = parseJSDateToYYYYMMDD(date)
+        
+        apiRequest(formatedDate);
     });
 
 });
