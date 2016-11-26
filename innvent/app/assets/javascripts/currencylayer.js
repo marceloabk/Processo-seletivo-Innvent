@@ -21,6 +21,13 @@ $(document).ready(function() {
                 USDEUR.push(json.quotes.USDEUR);
                 USDARS.push(json.quotes.USDARS);
 
+            },                   
+            complete: function(){ 
+
+                if (USDBRL.length == 7 && USDARS.length == 7 && USDARS.length == 7) {
+                    convertArraysToBRL(USDARS);
+                    convertArraysToBRL(USDEUR);
+                }
             }
         });
 
@@ -44,11 +51,12 @@ $(document).ready(function() {
         }
     }
 
-    function changeCurrencyTOBRL(brazilianConverted, anyConverted) {
-        
-        let conversion = anyConverted / brazilianConverted;
-        
-        return conversion;
+    function convertArraysToBRL(array) {
+
+        for (var i = 0; i < array.length; i++) {
+            array[i] = USDBRL[i] / array[i];
+        }
+
     }
 
 
