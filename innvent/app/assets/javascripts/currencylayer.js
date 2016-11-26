@@ -25,7 +25,7 @@ $(document).ready(function() {
     }
 
     function parseJSDateToYYYYMMDD(date) {
-        var stringDate = date.toISOString().slice(0,10).replace(/-/g,"/");
+        var stringDate = date.toISOString().slice(0,10);
         return stringDate;
     }
 
