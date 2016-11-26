@@ -1,13 +1,13 @@
 $(document).ready(function() {
 
     // set endpoint and your access key
-    endpoint = 'live'
+    endpoint = 'historical'
     access_key = '0a27d12beb3002410379fbfde65fe054';
 
-    function apiRequest() {
+    function apiRequest(date) {
         // get the most recent exchange rates via the "live" endpoint:
         $.ajax({
-            url: 'http://apilayer.net/api/' + endpoint + '?access_key=' + access_key,   
+            url: 'http://apilayer.net/api/' + endpoint + '?access_key=' + access_key + '&date=',   
             dataType: 'jsonp',
             success: function(json) {
 
@@ -22,6 +22,11 @@ $(document).ready(function() {
                 
             }
         });
+    }
+
+    function parseJSDateToYYYYMMDD(date) {
+        var stringDate = date.toISOString().slice(0,10).replace(/-/g,"/");
+        return stringDate;
     }
 
 
