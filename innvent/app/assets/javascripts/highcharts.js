@@ -201,16 +201,53 @@ $(document).ready(function () {
     var chart1 = new Highcharts.Chart({
         chart: {
             renderTo: 'container',
+            zoomType: 'x',
         },
-
+        title: {
+            text: 'BRL to USD exchange rate over time'
+        },
+        subtitle: {
+            text: document.ontouchstart === undefined ?
+                    'Click and drag in the plot area to zoom in' : 'Pinch the chart to zoom in'
+        },
         xAxis: {
             type: 'datetime'
         },
-
+        yAxis: {
+            title: {
+                text: 'Exchange rate'
+            }
+        },
+        plotOptions: {
+            area: {
+                fillColor: {
+                    linearGradient: {
+                        x1: 0,
+                        y1: 0,
+                        x2: 0,
+                        y2: 1
+                    },
+                    stops: [
+                        [0, Highcharts.getOptions().colors[0]],
+                        [1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
+                    ]
+                },
+                marker: {
+                    radius: 2
+                },
+                lineWidth: 1,
+                states: {
+                    hover: {
+                        lineWidth: 1
+                    }
+                },
+                threshold: null
+            }
+        },
         series: [{
-            data: [29.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4],
-            pointStart: Date.UTC(2010, 0, 1),
-            pointInterval: 3600 * 1000 // one hour
+            type: 'area',
+            name: 'USD to EUR',
+            data: [[Date.UTC(2013,2,3), 3],[Date.UTC(2013,2,4), 5],[Date.UTC(2013,2,5), 10]]
         }]
     });
 });
