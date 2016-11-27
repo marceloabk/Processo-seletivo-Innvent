@@ -90,6 +90,6 @@ $(document).ready(function() {
     }
 
     // call fillHistoricalRatesArray when the page is ready
-    fillHistoricalRatesArray();
+    // fillHistoricalRatesArray();
 
 });
