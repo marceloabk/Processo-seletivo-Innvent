@@ -10,8 +10,8 @@ $(document).ready(function () {
                 backgroundColor: {
                     linearGradient: { x1: 0, y1: 0, x2: 1, y2: 1 },
                     stops: [
-                    [0, '#2a2a2b'],
-                    [1, '#3e3e40']
+                    [0, 'rgba(43, 43, 44, 0.9)'],
+                    [1, 'rgba(62, 62, 65, 0.9)']
                     ]
                 },
                 style: {
@@ -22,14 +22,13 @@ $(document).ready(function () {
             title: {
                 style: {
                     color: '#E0E0E3',
-                    textTransform: 'uppercase',
-                    fontSize: '20px'
+                    fontSize: '18px'
                 }
             },
             subtitle: {
                 style: {
                     color: '#E0E0E3',
-                    textTransform: 'uppercase'
+                    fontSize: '12px'
                 }
             },
             xAxis: {
