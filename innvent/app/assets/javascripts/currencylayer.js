@@ -95,6 +95,7 @@ $(document).ready(function() {
     // this function parse array to this format for the last 7 days
     function parseToHighChartsArray() { 
 
+        // get the current date and subtract 1 week + 1 to doesn't subtract the current day
         let date = new Date();
 
         for (var i = 0; i < DAYS_OF_WEEK; i++) {
@@ -111,6 +112,9 @@ $(document).ready(function() {
 
         }
 
+        usdbrl.reverse();
+        usdeur.reverse();
+        usdars.reverse();
 
     }
 
