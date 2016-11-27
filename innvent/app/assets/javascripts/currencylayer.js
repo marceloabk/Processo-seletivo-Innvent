@@ -35,6 +35,7 @@ $(document).ready(function() {
                 if (usdbrl.length == DAYS_OF_WEEK && usdars.length == DAYS_OF_WEEK && usdars.length == DAYS_OF_WEEK) {
                     convertArraysToBRL(usdars);
                     convertArraysToBRL(usdeur);
+                    parseToHighChartsArray();
                 }
             }
         });
@@ -89,7 +90,31 @@ $(document).ready(function() {
 
     }
 
+    // data array in hichart meet this format:
+    // [[Date.UTC(2013,2,3), 3],[Date.UTC(2013,2,4), 5],[Date.UTC(2013,2,5), 10]]
+    // this function parse array to this format for the last 7 days
+    function parseToHighChartsArray() { 
+
+        let date = new Date();
+
+        for (var i = 0; i < DAYS_OF_WEEK; i++) {
+            
+            usdbrl.push([date.getTime(),usdbrl[0]]);
+            usdeur.push([date.getTime(),usdeur[0]]);
+            usdars.push([date.getTime(),usdars[0]]);
+
+            usdbrl.shift();
+            usdeur.shift();
+            usdars.shift();
+
+            date.setDate(date.getDate() - 1);
+
+        }
+
+
+    }
+
     // call fillHistoricalRatesArray when the page is ready
-    // fillHistoricalRatesArray();
+    fillHistoricalRatesArray();
 
 });
