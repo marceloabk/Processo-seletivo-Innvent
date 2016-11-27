@@ -100,10 +100,16 @@ $(document).ready(function() {
 
         for (var i = 0; i < DAYS_OF_WEEK; i++) {
             
-            usdbrl.push([date.getTime(),usdbrl[0]]);
-            usdeur.push([date.getTime(),usdeur[0]]);
-            usdars.push([date.getTime(),usdars[0]]);
+            // toFixed(4) round the number to Two decimal places
+            let brlValue = parseFloat(usdbrl[0].toFixed(4));
+            let eurValue = parseFloat(usdeur[0].toFixed(4));
+            let arsValue = parseFloat(usdars[0].toFixed(4));
 
+            usdbrl.push([date.getTime(),brlValue]);
+            usdeur.push([date.getTime(),eurValue]);
+            usdars.push([date.getTime(),arsValue]);
+
+            // shift() remove the first array position
             usdbrl.shift();
             usdeur.shift();
             usdars.shift();
