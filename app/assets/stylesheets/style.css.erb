@@ -71,7 +71,7 @@ Main Components
   margin-right: 5%;
   width: 44px;
   height: 100%;
-  background: url("../assets/cd-icon-menu.svg") no-repeat center center;
+  background: url(<%= asset_path 'cd-icon-menu.svg' %>) no-repeat center center;
 }
 .cd-primary-nav ul {
   position: absolute;
@@ -217,15 +217,15 @@ Single slide style
 }
 .cd-hero-slider li:nth-of-type(2) {
   background-color: #3d4952;
-  background-image: url("../assets/background1.jpeg");
+  background-image: url(<%= asset_path 'background1.jpeg' %>);
 }
 .cd-hero-slider li:nth-of-type(3) {
   background-color: #586775;
-  background-image: url("../assets/background2.jpeg");
+  background-image: url(<%= asset_path 'background2.jpeg' %>);
 }
 .cd-hero-slider li:nth-of-type(4) {
   background-color: #2c343b;
-  background-image: url("../assets/background3.jpeg");
+  background-image: url(<%= asset_path 'background3.jpeg' %>);
 }
 
 .cd-hero-slider .cd-full-width,
@@ -334,13 +334,13 @@ Single slide style
 }
 @media only screen and (min-width: 768px) {
   .cd-hero-slider li:nth-of-type(2) {
-    background-image: url("../assets/background1.jpeg");
+    background-image: url(<%= asset_path 'background1.jpeg' %>);
   }
   .cd-hero-slider li:nth-of-type(3) {
-    background-image: url("../assets/background2.jpeg");
+    background-image: url(<%= asset_path 'background2.jpeg' %>);
   }
   .cd-hero-slider li:nth-of-type(4) {
-    background-image: url("../assets/background3.jpeg");
+    background-image: url(<%= asset_path 'background3.jpeg' %>);
   }
   .cd-hero-slider .cd-full-width,
   .cd-hero-slider .cd-half-width {
