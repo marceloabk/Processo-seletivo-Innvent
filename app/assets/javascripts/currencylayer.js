@@ -56,12 +56,12 @@ $(document).ready(function() {
     function fillHistoricalRatesArray() {
 
         // get current date
-        let date = new Date();
+        var date = new Date();
 
 
         for (var i = 0; i < DAYS_OF_WEEK; i++) {
 
-            let formatedDate = parseJSDateToYYYYMMDD(date);
+            var formatedDate = parseJSDateToYYYYMMDD(date);
 
             // get data for the given date
             apiRequest(formatedDate);
@@ -96,14 +96,14 @@ $(document).ready(function() {
     function parseToHighChartsArray() { 
 
         // get the current date and subtract 1 week + 1 to doesn't subtract the current day
-        let date = new Date();
+        var date = new Date();
 
         for (var i = 0; i < DAYS_OF_WEEK; i++) {
             
             // toFixed(4) round the number to four decimal places
-            let brlValue = parseFloat(usdbrl[0].toFixed(4));
-            let eurValue = parseFloat(usdeur[0].toFixed(4));
-            let arsValue = parseFloat(usdars[0].toFixed(4));
+            var brlValue = parseFloat(usdbrl[0].toFixed(4));
+            var eurValue = parseFloat(usdeur[0].toFixed(4));
+            var arsValue = parseFloat(usdars[0].toFixed(4));
 
             usdbrl.push([date.getTime(),brlValue]);
             usdeur.push([date.getTime(),eurValue]);
