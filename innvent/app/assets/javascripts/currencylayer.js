@@ -100,7 +100,7 @@ $(document).ready(function() {
 
         for (var i = 0; i < DAYS_OF_WEEK; i++) {
             
-            // toFixed(4) round the number to Two decimal places
+            // toFixed(4) round the number to four decimal places
             let brlValue = parseFloat(usdbrl[0].toFixed(4));
             let eurValue = parseFloat(usdeur[0].toFixed(4));
             let arsValue = parseFloat(usdars[0].toFixed(4));

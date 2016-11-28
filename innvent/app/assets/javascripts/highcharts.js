@@ -234,11 +234,22 @@ $(document).ready(function () {
                     'Clique no gráfico para aumentar o zoom'
                 },
                 xAxis: {
-                    type: 'datetime'
+                    labels: {
+                        formatter: function() {
+                             return Highcharts.dateFormat("%e %b", this.value);
+                        }
+                    }
                 },
                 yAxis: {
                     title: {
                         text: 'Taxa de câmbio'
+                    }
+                },
+                tooltip: {
+                    crosshairs: [true],
+                    formatter: function() {
+                        return  '<b>' +  Highcharts.dateFormat('%e-%b-%Y', new Date(this.x))+'</b><br/>'
+                        + 'R$ ' + this.y;
                     }
                 },
                 plotOptions: {
