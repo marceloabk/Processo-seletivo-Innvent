@@ -1,24 +1,11 @@
-# README
+# Porcesso seletivo innvent
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+O desafio era criar um site que resolveria a seguinte história de usurio:
 
-Things you may want to cover:
+Preciso que em meu site tenha uma página com um gráfico que apresente a cotação dos últimos sete dias para real versus dólar, euro e pesos argentinos. A página deve ter três botões (um para cada uma das moedas) e, ao clicar nos botões, apareceria o gráfico de linha com os valores abaixo dos botões. 
 
-* Ruby version
+## Testes
 
-* System dependencies
+Foram criados somente dois testes, mais a título de exemplificação.
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+![](http://i.imgur.com/4zW20XJ.png)
