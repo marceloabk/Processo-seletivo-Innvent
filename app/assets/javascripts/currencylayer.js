@@ -1,16 +1,4 @@
 
-
-// receive a js object Date() and transform it to string with format YYYY-MM-DD
-// the currency layer APIS needs the date with this format
-function parseJSDateToYYYYMMDD(date) {
-
-    // slice(0,10) to get the first 10 characters (YYYY-MM-DD)
-    var stringDate = date.toISOString().slice(0,10);
-    
-    return stringDate;
-}
-
-
 $(document).ready(function() {
 
     // set endpoint and access key
@@ -26,9 +14,6 @@ $(document).ready(function() {
 
     // create a request at currency layer
     function apiRequest(date) {
-
-        ajax request for historical endpoint
-        returns historical rate of a given data of USD to BRL, USD to EUR and USD to ARS
         $.ajax({
             url: 'http://apilayer.net/api/' + endpoint + '?access_key=' + 
             access_key + '&date=' + date + "&currencies=BRL,EUR,ARS",   
@@ -93,6 +78,18 @@ $(document).ready(function() {
             array[i] = usdbrl[i] / array[i];
         }
 
+    }
+
+
+
+    // receive a js object Date() and transform it to string with format YYYY-MM-DD
+    // the currency layer APIS needs the date with this format
+    function parseJSDateToYYYYMMDD(date) {
+
+        // slice(0,10) to get the first 10 characters (YYYY-MM-DD)
+        var stringDate = date.toISOString().slice(0,10);
+        
+        return stringDate;
     }
 
     // data array in hichart meet this format:
