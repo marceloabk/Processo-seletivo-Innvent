@@ -27,31 +27,31 @@ $(document).ready(function() {
     // create a request at currency layer
     function apiRequest(date) {
 
-        // ajax request for historical endpoint
-        // returns historical rate of a given data of USD to BRL, USD to EUR and USD to ARS
-        // $.ajax({
-        //     url: 'http://apilayer.net/api/' + endpoint + '?access_key=' + 
-        //     access_key + '&date=' + date + "&currencies=BRL,EUR,ARS",   
-        //     dataType: 'jsonp',
-        //     success: function(json) {
+        ajax request for historical endpoint
+        returns historical rate of a given data of USD to BRL, USD to EUR and USD to ARS
+        $.ajax({
+            url: 'http://apilayer.net/api/' + endpoint + '?access_key=' + 
+            access_key + '&date=' + date + "&currencies=BRL,EUR,ARS",   
+            dataType: 'jsonp',
+            success: function(json) {
 
-        //         usdbrl.push(json.quotes.USDBRL);
-        //         usdeur.push(json.quotes.USDEUR);
-        //         usdars.push(json.quotes.USDARS);                
+                usdbrl.push(json.quotes.USDBRL);
+                usdeur.push(json.quotes.USDEUR);
+                usdars.push(json.quotes.USDARS);                
 
-        //     },                   
-        //     complete: function(){ 
+            },                   
+            complete: function(){ 
                 
-        //         // compare arrays length with 7 to see if is the last apiRequest call
-        //         // it's 7 because it show result of the last week
+                // compare arrays length with 7 to see if is the last apiRequest call
+                // it's 7 because it show result of the last week
 
-        //         if (usdbrl.length == DAYS_OF_WEEK && usdars.length == DAYS_OF_WEEK && usdars.length == DAYS_OF_WEEK) {
-        //             convertArraysToBRL(usdars);
-        //             convertArraysToBRL(usdeur);
-        //             parseToHighChartsArray();
-        //         }
-        //     }
-        // });
+                if (usdbrl.length == DAYS_OF_WEEK && usdars.length == DAYS_OF_WEEK && usdars.length == DAYS_OF_WEEK) {
+                    convertArraysToBRL(usdars);
+                    convertArraysToBRL(usdeur);
+                    parseToHighChartsArray();
+                }
+            }
+        });
 
     }
 
